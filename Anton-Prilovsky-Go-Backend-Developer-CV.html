@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anton Prilovsky — Go Backend Developer</title>
+<style>
+  :root {
+    --fg: #111;
+    --muted: #666;
+    --line: #e5e5e5;
+    --bg: #fff;
+    --accent: #0a66c2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--fg);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .header-text { min-width: 0; }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .role {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .contact {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .contact a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contact a:hover { border-color: var(--fg); }
+  .contact span { margin-right: 14px; white-space: nowrap; }
+
+  /* ---------- PHOTO ---------- */
+  .photo {
+    flex: none;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f2f2f2;
+    border: 1px solid var(--line);
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
+    filter: saturate(0.95);
+  }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  p { margin: 0 0 12px; }
+
+  .stack-group { margin-bottom: 10px; }
+  .stack-group b { font-weight: 600; }
+  .stack-group span { color: #333; }
+
+  .job { margin-bottom: 32px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-bottom: 2px;
+  }
+  .job-title { font-weight: 600; font-size: 16px; }
+  .job-meta { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .job-sub {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .job-tech {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .job-tech b { color: #333; font-weight: 500; }
+
+  h3 {
+    font-size: 13.5px;
+    font-weight: 600;
+    margin: 14px 0 8px;
+    color: #222;
+  }
+
+  ul {
+    margin: 0 0 10px;
+    padding-left: 18px;
+  }
+  li {
+    margin-bottom: 8px;
+    padding-left: 2px;
+  }
+  li::marker { color: #bbb; }
+
+  strong { font-weight: 600; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 36px 20px 60px; }
+    header {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    h1 { font-size: 22px; }
+    .photo { width: 76px; height: 76px; }
+    .contact span { display: block; margin-bottom: 4px; }
+  }
+  @media (max-width: 380px) {
+    header { flex-direction: column-reverse; }
+    .photo { width: 88px; height: 88px; }
+  }
+  @media print {
+    .wrap { padding: 0; max-width: none; }
+    a { color: #000; border: none; }
+    section { break-inside: avoid; }
+    .photo { width: 24mm; height: 24mm; }
+    .photo img { filter: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-text">
+      <h1>Anton Prilovsky</h1>
+      <div class="role">Go Backend Developer</div>
+      <div class="contact">
+        <span><a href="tel:+79041327722">+7 904 132-77-22</a></span>
+        <span><a href="mailto:okey.exe@yandex.ru">okey.exe@yandex.ru</a></span>
+        <span>Telegram: <a href="https://t.me/sheisangel">@sheisangel</a></span>
+        <span>GitHub: <a href="https://github.com/Yolowhok" target="_blank" rel="noopener">Yolowhok</a></span>
+      </div>
+    </div>
+
+    <div class="photo">
+      <img src="photo.jpg" alt="Anton Prilovsky">
+    </div>
+  </header>
+
+  <section>
+    <h2>О себе</h2>
+    <p>Go-разработчик с опытом проектирования высоконагруженных и отказоустойчивых микросервисов (Clean Architecture, DDD). Профильный опыт в домене Travel (управление билетами, сложная логика статусов). Специализируюсь на надёжных межсервисных интеграциях (Transactional Outbox, Kafka, gRPC), конкурентном коде на Go и observability (OpenTelemetry). Умею анализировать инциденты в распределённых системах, находить узкие места и оптимизировать работу с БД. Ищу сильную команду с высокими инженерными стандартами для работы над масштабной платформой.</p>
+  </section>
+
+  <section>
+    <h2>Стек</h2>
+    <div class="stack-group"><b>Языки:</b> <span>Go, SQL</span></div>
+    <div class="stack-group"><b>Базы данных:</b> <span>PostgreSQL, MySQL, MariaDB, MS SQL, Redis, Elasticsearch, ClickHouse</span></div>
+    <div class="stack-group"><b>Брокеры сообщений:</b> <span>Kafka, RabbitMQ</span></div>
+    <div class="stack-group"><b>API и протоколы:</b> <span>gRPC, REST, Protobuf, OpenAPI, HTTP/1.1, HTTP/2, TLS / ALPN, WebSocket, SSE</span></div>
+    <div class="stack-group"><b>Инфраструктура:</b> <span>Docker, Kubernetes (K8s), Linux / Unix, Nginx, CI/CD (GitLab CI, GitHub Actions)</span></div>
+    <div class="stack-group"><b>Хранилища:</b> <span>S3 (MinIO, Garage)</span></div>
+    <div class="stack-group"><b>Auth / Security:</b> <span>JWT, OAuth2, RBAC</span></div>
+    <div class="stack-group"><b>Go:</b> <span>конкурентность и многопоточность (горутины, каналы, worker pools, errgroup, sync), управление жизненным циклом запросов (context, отмена, таймауты), graceful shutdown, gRPC-интерцепторы, идиоматичная обработка ошибок</span></div>
+    <div class="stack-group"><b>Архитектура:</b> <span>микросервисы, Clean Architecture и DDD в прагматичном Go-стиле (пакеты по доменам, accept interfaces — return structs, без лишних абстракций), event-driven, Transactional Outbox, идемпотентность</span></div>
+    <div class="stack-group"><b>Наблюдаемость:</b> <span>Prometheus, Grafana, Loki, OpenTelemetry, Jaeger, Grafana Tempo</span></div>
+    <div class="stack-group"><b>Тестирование:</b> <span>unit, integration, e2e, table-driven tests, моки через интерфейсы, sqlmock, race detector</span></div>
+  </section>
+
+  <section>
+    <h2>Опыт работы</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">СтройПроектСервис — Go Backend Developer</div>
+        <div class="job-meta">август 2023 — н.в.</div>
+      </div>
+      <div class="job-sub">B2B-платформа управления сотрудниками, нарядами и командировками. Поэтапный распил PHP-монолита на Go-микросервисы.</div>
+      <div class="job-tech"><b>Стек:</b> Go, gRPC, Protobuf, PostgreSQL, MariaDB, Redis, Kafka, RabbitMQ, S3 (MinIO), Docker, Kubernetes (K8s), Nginx, Prometheus, Grafana, Loki, OpenTelemetry, Grafana Tempo</div>
+
+      <h3>Домен билетов и поездок</h3>
+      <ul>
+        <li>Спроектировал и вывел в прод <strong>сервис поездок</strong> с ролевой моделью: сотрудник сдаёт посадочный в ЛК, оператор проверяет, ERP получает статус автоматически. Раньше билеты жили в 1С, а посадочные — в переписке и на бумаге.</li>
+        <li>Развёл <strong>статус ERP и локальный статус проверки</strong>: импорт из 1С больше не откатывает решения оператора, конфликтующие обновления отклоняются с 409 Conflict.</li>
+        <li>Закрыл путь <strong>сквозным трейсингом, метриками и алертами</strong>: жалобы «я загрузил, а оператор не видит» разбираются от алерта до конкретного спана, а не перебором логов.</li>
+      </ul>
+
+      <h3>Платформа и надёжность</h3>
+      <ul>
+        <li>Перевёл <strong>сессии и авторизацию поддержки</strong> с PHP-монолита на Go (zero-downtime): выкатил login-as, многослойный logout и v1-маршруты тремя последовательными релизами. После переключения — 0 ошибок 5xx, трафик (~600 logout в день) бесшовно пошёл через новые микросервисы.</li>
+        <li>Снизил долю <strong>5xx в auth</strong> (~50 тыс. req/day) с 0.29% до ~0 на фоне роста трафика на 23%: отделил клиентские обрывы (499 / 504) от серверных ошибок через контекст, добавил panic recovery в gRPC. Изолировал критичные транзакции — обрыв связи не оставляет полузаписанных данных. Шторм 409-х снижен с 23% до 0.6%.</li>
+        <li>Нашёл причину <strong>«фантомных» Network Error</strong> при загрузке фото без воспроизведения: сопоставил логи на трёх слоях (edge Nginx HTTP/2 → внутренний Nginx → PHP) — API отдавал 200, а обрывы (408 / 499) шли от мобильных клиентов на edge. Снял подозрение на регрессию и предотвратил откат стабильного релиза.</li>
+        <li>Внедрил <strong>Transactional Outbox</strong> (Kafka, RabbitMQ) с at-least-once доставкой, дедупликацией и DLQ: обмен с 1С больше не теряет данные, повтор не создаёт дубль.</li>
+        <li>Разделил ошибки на <strong>транзитные и терминальные</strong>: сетевые сбои повторяются с backoff, а в DLQ попадают только реальные баги. Кратковременные отказы 1С перевариваются незаметно.</li>
+        <li>Ускорил приём <strong>пачек из 1С</strong> с ~19.5 с (129 документов) до &lt; 1 с (5000+ документов). По спанам Tempo нашёл, что 95% времени уходит на N+1 проблему (последовательные DELETE); fan-out на горутинах только истощил бы пул соединений БД. Заменил их одним запросом на батч и перевёл приём на асинхронный контракт через S3 и очередь (Claim Check).</li>
+        <li>Сократил <strong>запись документа</strong> с 3–4 с до миллисекунд: нашёл полный скан ~393 тыс. строк и добавил индекс на проде без блокировки таблицы.</li>
+        <li>Разработал <strong>сервис realtime-чата</strong> (WebSocket, REST, брокер сообщений): решил задачу синхронизации коннектов при горизонтальном масштабировании, настроил observability (Prometheus).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Bulkhead CRM — Founder / Backend Lead</div>
+        <div class="job-meta">2024 — январь 2026</div>
+      </div>
+      <div class="job-sub">Коммерческий SaaS для школ: мультитенантность, интеграции с внешними CRM. Отвечал за backend полного цикла — архитектура, разработка, деплой, эксплуатация в production. <a href="https://bulkheadcrm.ru">bulkheadcrm.ru</a></div>
+      <div class="job-tech"><b>Стек:</b> Go, PostgreSQL, MS SQL, Elasticsearch, ClickHouse, Redis, Kafka, S3, Docker, Kubernetes (K8s), GitHub Actions, Prometheus, Grafana, OpenTelemetry</div>
+      <ul>
+        <li>Разбил систему на <strong>bounded contexts</strong> (auth, tenancy, product, integration, analytics) с изоляцией persistence — домен меняется, не ломая соседние.</li>
+        <li>Построил <strong>антикоррупционный слой</strong> к внешней CRM: polling и webhook inbox с дедупликацией, разрешение гонок между каналами, общий лимитер исходящих на все реплики. Чужие сбои и квоты не роняют продукт.</li>
+        <li>Заменил полный обход снимка на <strong>индексируемую проекцию</strong>: фильтры и поиск считаются в БД, скорость выдачи не зависит от объёма данных тенанта.</li>
+        <li>Развёл батч и онлайн-доставку по <strong>изолированным worker pools</strong> с лимитом concurrency и закрепил SLO — e2e p95 ≤ 10 с, backlog ≤ 2000, permanent fail ≤ 1%. Релизы zero-downtime через blue/green и expand–contract миграции.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Проекты</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">ТВОЯ ЛАБА — Founder / Backend Lead</div>
+        <div class="job-meta">апрель 2026 — н.в.</div>
+      </div>
+      <div class="job-sub">Свой проект вне основной работы. Платформа школы программирования: публичный сайт, админ-панель и асинхронный конвейер генерации, ревью и мультиканальной публикации контента. <a href="https://tvoyalaba.ru">tvoyalaba.ru</a></div>
+      <div class="job-tech"><b>Стек:</b> Go, PostgreSQL, Redis, S3, Docker, Caddy, GitHub Actions, JWT, RBAC, SSE</div>
+      <ul>
+        <li>Реализовал <strong>отказоустойчивый лизинг задач</strong> на PostgreSQL: упавший воркер не блокирует очередь, гонок и дублей постов нет.</li>
+        <li>Получил <strong>exactly-once поверх at-least-once</strong>: факт публикации хранится в истории событий в БД, ретрай и перезапуск воркера безопасны.</li>
+        <li>Собрал <strong>конвейер стейт-машин</strong> (генерация, ревью, медиа, тренды) на воркерах-горутинах с отменой через контекст, прогрессом через SSE и восстановлением после рестарта без повторной работы.</li>
+        <li>Снизил <strong>расходы на платный внешний API</strong>: многоступенчатая фильтрация, кластеризация и ранжирование, дорогой вызов идёт только на top-N кандидатов.</li>
+        <li>Автоматизировал эксплуатацию без дежурной команды: CI/CD с миграциями, health и readiness, шифрование секретов at rest, ежедневные бэкапы.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Образование</h2>
+    <div class="job-head">
+      <div class="job-title">ИГУ ИМИТ — бакалавриат</div>
+      <div class="job-meta">июнь 2025</div>
+    </div>
+    <div class="job-sub">«Математическое обеспечение и администрирование информационных систем»</div>
+  </section>
+
+  <section>
+    <h2>Дополнительно</h2>
+    <ul>
+      <li><strong>Тесты:</strong> table-driven unit, integration рядом с пакетами (_test.go), моки через интерфейсы, race detector в CI; отдельные тесты на инварианты интеграций — дедупликация, конфликты версий, изоляция тенанта.</li>
+      <li><strong>Инструменты:</strong> Linux / Unix в разработке и эксплуатации, Git, code review, GitLab CI, GitHub Actions.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
